@@ -213,7 +213,7 @@ function buildPanel() {
     contentDiv.appendChild(createSection(icons.image, i18n[currentLang].sectionTitles.projects, createProjects()));
 
     const githubLink = document.createElement('a');
-    githubLink.href = 'github.com/tafiranium';
+    githubLink.href = 'https://github.com/tafiranium';
     githubLink.target = '_blank';
     githubLink.className = 'github-link';
     githubLink.innerHTML = `github.com/tafiranium ${icons.externalLink}`;
