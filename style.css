@@ -726,3 +726,121 @@ body::after {
         border-color: hsl(var(--primary));
     }
 }
+
+/* ========== ВЕРХНИЕ КОНТРОЛЫ ========== */
+.top-controls {
+    position: fixed;
+    top: clamp(10px, 3vh, 20px);
+    left: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+/* Логотип слева */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: clamp(2.5rem, 8vw, 3rem);
+    height: clamp(2.5rem, 8vw, 3rem);
+    border-radius: 12px;
+    object-fit: contain;
+    transition: all 0.2s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 12px hsl(var(--glow-primary) / 0.3));
+}
+
+/* Контейнер для кнопок справа */
+.controls-right {
+    display: flex;
+    gap: clamp(8px, 2vw, 10px);
+    margin-left: auto; /* Прижимает к правому краю */
+}
+
+/* Стили кнопок (оставляем как есть) */
+.theme-toggle-btn,
+.lang-toggle-btn {
+    background: hsl(var(--glass-bg) / 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: 50%;
+    width: clamp(2.5rem, 8vw, 3rem);
+    height: clamp(2.5rem, 8vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: hsl(var(--foreground));
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 0;
+    font-weight: 500;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+}
+
+.theme-toggle-btn:hover,
+.lang-toggle-btn:hover {
+    background: hsl(var(--glass-bg));
+    border-color: hsl(var(--primary));
+    transform: scale(1.1);
+    box-shadow: 0 0 15px hsl(var(--glow-primary) / 0.3);
+}
+
+.theme-toggle-btn svg,
+.lang-toggle-btn svg {
+    width: clamp(1.2rem, 4vw, 1.5rem);
+    height: clamp(1.2rem, 4vw, 1.5rem);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover svg,
+.lang-toggle-btn:hover svg {
+    transform: rotate(15deg);
+}
+
+.lang-toggle-btn span {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: clamp(0.7rem, 2.5vw, 0.875rem);
+    letter-spacing: 0.5px;
+}
+
+.lang-toggle-btn .lang-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.lang-toggle-btn:hover .lang-icon {
+    transform: scale(1.1);
+}
+
+/* Для светлой темы */
+.theme-light .logo {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.theme-light .logo:hover {
+    filter: drop-shadow(0 6px 12px hsl(var(--glow-primary) / 0.4));
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .logo {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+}
