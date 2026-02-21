@@ -211,9 +211,9 @@ function buildPanel() {
     contentDiv.appendChild(createSection(icons.briefcase, i18n[currentLang].sectionTitles.experience, createExperience()));
     contentDiv.appendChild(createSection(icons.code2, i18n[currentLang].sectionTitles.skills, createSkills()));
     contentDiv.appendChild(createSection(icons.image, i18n[currentLang].sectionTitles.projects, createProjects()));
-
+    
     const githubLink = document.createElement('a');
-    githubLink.href = 'https://github.com/portfolio/';
+    githubLink.href = 'https://github.com/tafiranium';
     githubLink.target = '_blank';
     githubLink.className = 'github-link';
     githubLink.innerHTML = `github.com/tafiranium ${icons.externalLink}`;
